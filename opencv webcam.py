@@ -7,6 +7,9 @@ capture = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 while True:
     _,img = capture.read()
 
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(img, 'This is man', (10, 100), font, 2, (100, 100, 100), 2)
+
     imgCanny = cv2.Canny(img, 100,100)
 
     kernel = np.ones((5,5),np.uint8)
